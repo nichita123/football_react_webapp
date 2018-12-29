@@ -4,7 +4,7 @@ import Jersey from "../../../assets/images/jersey.jpg";
 
 const Animation = () => {
   return (
-    <div class="promotion_animation">
+    <div className="promotion_animation">
       <div className="left">
         <Zoom>
           <div>
