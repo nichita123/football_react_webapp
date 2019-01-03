@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import AppBar from '@material-ui/core/AppBar';
-import ToolBar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
+import AppBar from "@material-ui/core/AppBar";
+import ToolBar from "@material-ui/core/Toolbar";
+import Button from "@material-ui/core/Button";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import { CityLogo } from '../ui/icons';
-
+import { CityLogo } from "../ui/icons";
 
 class Header extends Component {
   render() {
@@ -15,26 +14,20 @@ class Header extends Component {
       <AppBar
         position="fixed"
         style={{
-          backgroundColor: '#98c5e9',
-          boxShadow: 'none',
-          padding: '10px 0',
-          borderBottom: '2px solid #00285e'
+          backgroundColor: "#98c5e9",
+          boxShadow: "none",
+          padding: "10px 0",
+          borderBottom: "2px solid #00285e"
         }}
       >
         <ToolBar
           style={{
-            display: 'flex'
+            display: "flex"
           }}
         >
-
-          <div style={{flexGrow: 1}}>
+          <div style={{ flexGrow: 1 }}>
             <div className="header_logo">
-              <CityLogo
-                link={true}
-                linkTo="/"
-                width="70px"
-                height="70px"
-              />
+              <CityLogo link={true} linkTo="/" width="70px" height="70px" />
             </div>
           </div>
 
@@ -45,6 +38,7 @@ class Header extends Component {
           <Link to="/matches">
             <Button color="inherit">Matches</Button>
           </Link>
+
         </ToolBar>
       </AppBar>
     );
