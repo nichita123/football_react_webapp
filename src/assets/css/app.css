@@ -25,7 +25,7 @@ a {
     background-size: cover !important;
 }
 .container {
-    max-width: 1024px;
+    width:1024px;
     margin: 0 auto;
 }
 
@@ -95,19 +95,19 @@ button {
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #cecece;
     text-align: center;
-}
+  }
   ::-moz-placeholder { /* Firefox 19+ */
     color: #cecece;
     text-align: center;
-}
+  }
   :-ms-input-placeholder { /* IE 10+ */
     color: #cecece;
     text-align: center;
-}
+  }
   :-moz-placeholder { /* Firefox 18- */
     color: #cecece;
     text-align: center;
-}
+  }
 
 
 .image_upload_container {
@@ -149,10 +149,10 @@ footer {
 }
 
 footer .img_cover{
-    margin: 0 auto;
+   margin:0 auto;
 }
 
-footer .footer_disclaimer {
+footer .footer_discl {
     margin: 10px 0px;
 }
 
@@ -346,9 +346,9 @@ footer .footer_disclaimer {
 }
 
 .match_filters {
-    display: flex;
-    border-bottom: 1px solid #01285e;
-    background: #dff1ff;
+     display: flex;
+     border-bottom: 1px solid #01285e;
+     background: #dff1ff;
 }
 .match_filters .tag {
     font-weight: 300;
@@ -454,7 +454,7 @@ footer .footer_disclaimer {
 
 
 /*=============================
-        PROMOTION
+         PROMOTION
 ===============================*/
 
 .promotion_wrapper {
@@ -477,7 +477,7 @@ footer .footer_disclaimer {
 }
 .promotion_wrapper .promotion_animation .left span {
     display:block;
-}
+ }
 
 .promotion_wrapper .promotion_animation .right {
     line-height: 135px;
@@ -514,7 +514,7 @@ footer .footer_disclaimer {
 }
 
 /*=============================
-        THE MATCHES
+         THE MATCHES
 ===============================*/
 
 .the_matches_container {
@@ -530,7 +530,7 @@ footer .footer_disclaimer {
 }
 
 .the_matches_wrapper .right {
-    width:400px;
+   width:400px;
 }
 
 .league_table_wrapper {

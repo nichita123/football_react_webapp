@@ -6,8 +6,12 @@ import { Switch } from "react-router-dom";
 import Home from "./components/home";
 import SignIn from "./components/sign_in";
 import Dashboard from "./components/admin/Dashboard";
-import AdminMatches from './components/admin/matches';
-import AddEditMatch from './components/admin/matches/AddEditMatch';
+import AdminMatches from "./components/admin/matches";
+import AddEditMatch from "./components/admin/matches/AddEditMatch";
+import AdminPlayers from "./components/admin/players";
+import AddEditPlayer from './components/admin/players/AddEditPlayer';
+
+import Team from './components/team';
 
 import PrivateRoute from "./components/auth_routes/PrivateRoutes";
 import PublicRoute from "./components/auth_routes/PublicRoutes";
@@ -16,43 +20,72 @@ const Routes = props => {
   return (
     <Layout>
       <Switch>
-        <PrivateRoute
+        <PublicRoute
           {...props}
           exact
-          path="/admin_matches/edit"
-          component={AddEditMatch}
+          restricted={false}
+          path="/"
+          component={Home}
+        />
+        <PublicRoute
+          {...props}
+          exact
+          restricted={false}
+          path="/team"
+          component={Team}
+        />
+        <PublicRoute
+          {...props}
+          restricted={true}
+          exact
+          path="/signin"
+          component={SignIn}
+        />
+        <PrivateRoute 
+          {...props} 
+          exact 
+          path="/admin" 
+          component={Dashboard} 
         />
         <PrivateRoute
           {...props}
           exact
-          path="/admin_matches/edit/:id"
-          component={AddEditMatch}
-        />
-        <PrivateRoute
-          {...props}
-          exact
-          path="/admin_matches"
+          path="/admin/matches"
           component={AdminMatches}
         />
         <PrivateRoute
           {...props}
           exact
-          path="/dashboard"
-          component={Dashboard}
+          path="/admin/matches/edit"
+          component={AddEditMatch}
+          //add match component
         />
-        <PublicRoute 
-          {...props}
-          restricted={true}
-          exact 
-          path="/sign_in"  
-          component={SignIn} 
-        />
-        <PublicRoute 
+        <PrivateRoute
           {...props}
           exact
-          restricted={false}
-          path="/"  
-          component={Home} 
+          path="/admin/matches/edit/:id"
+          component={AddEditMatch}
+          //edit match component
+        />
+        <PrivateRoute
+          {...props}
+          exact
+          path="/admin/players"
+          component={AdminPlayers}
+        />
+        <PrivateRoute
+          {...props}
+          exact
+          path="/admin/players/edit"
+          component={AddEditPlayer}
+          //add player component
+        />
+        <PrivateRoute
+          {...props}
+          exact
+          path="/admin/players/edit/:id"
+          component={AddEditPlayer}
+          //edit player component
         />
       </Switch>
     </Layout>
