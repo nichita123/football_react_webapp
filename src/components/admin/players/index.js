@@ -18,42 +18,35 @@ import { firebaseLooper, reverseArray } from "../../ui/misc";
 class AdminPlayers extends Component {
   state = {
     isLoading: true,
-    players: [
-      {
-        imageURL: [
-
-        ]
-      }
-    ],
-    images: []
+    players: []
   };
 
   componentDidMount() {
     firebasePlayers.once("value").then(snapshot => {
       const players = firebaseLooper(snapshot);
+      let promises = [];
 
-      this.setState({
-        isLoading: false,
-        players: reverseArray(players)
-      });
+      for (let key in players) {
+        promises.push(
+          new Promise((resolve, reject) => {
+            firebase
+              .storage()
+              .ref("players")
+              .child(players[key].image)
+              .getDownloadURL()
+              .then(url => {
+                players[key].url = url;
+                resolve();
+              });
+          })
+        );
+      }
 
-      this.state.players.forEach((player, i) => {
+      Promise.all(promises).then(() => {
         this.setState({
-          images: player.image
+          isLoading: false,
+          players
         });
-
-        firebase
-          .storage()
-          .ref("players")
-          .child(this.state.images)
-          .getDownloadURL()
-          .then(url => {
-            // console.log(url)
-            this.setState({
-              imageURL: url
-            });
-            console.log(this.state.imageURL)
-          });
       });
     });
   }
@@ -83,7 +76,7 @@ class AdminPlayers extends Component {
                             <div
                               style={{
                                 background: `url(${
-                                    this.state.imageURL
+                                    player.url
                                 })no-repeat center top`,
                                 backgroundSize: "cover",
                                 width: "125px",

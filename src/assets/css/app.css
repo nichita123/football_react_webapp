@@ -163,7 +163,7 @@ footer .footer_discl {
 
 .featured_wrapper {
     margin: 0 auto;
-    width: 1280px;
+    max-width: 1280px;
     margin-top: 90px;
     height: 800px;
     overflow: hidden;
@@ -233,8 +233,14 @@ footer .footer_discl {
 }
 
 .home_matches_wrapper .home_matches .item {
-    width: 50%;
+    flex-basis: 50%;
     margin: 35px 0px;
+}
+
+@media screen and (max-width: 992px) {
+    .home_matches_wrapper .home_matches .item {
+        flex-basis: 25%;
+    }
 }
 
 .home_matches_wrapper .home_matches .item .wrapper {
@@ -305,7 +311,7 @@ footer .footer_discl {
     clear: both;
 }
 
-.match_box_big .block_wraper {
+.match_box_big .block_wrapper {
     display: inline-block;
     margin-right: 50px;
     float: left;
@@ -333,7 +339,7 @@ footer .footer_discl {
     font-weight: 500;
 }
 
-.block_wraper.nfo {
+.block_wrapper.nfo {
     border-left: 1px solid #98c6e9;
     height: 102px;
     padding-left: 10px;
@@ -341,7 +347,7 @@ footer .footer_discl {
     color: #5e5e5e;
 }
 
-.block_wraper.nfo div {
+.block_wrapper.nfo div {
     margin: 5px 0px;
 }
 
@@ -430,15 +436,21 @@ footer .footer_discl {
 .player_card_wrapper .player_card_nfo {
     position: relative;
 }
+
+.player_card_info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .player_card_wrapper .player_card_number {
     color: #d6ecfe;
-    font-size: 185px;
-    text-align: right;
+    font-size: 130px;
     line-height: 160px;
+    order: 1;
 }
 
 .player_card_wrapper .player_card_name {
-    position: absolute;
     bottom: 0px;
 }
 
@@ -447,6 +459,8 @@ footer .footer_discl {
     font-size: 25px;
     color: #0d1831;
 }
+
+
 
 .home_text_wrapper {
     margin-top: 70px;

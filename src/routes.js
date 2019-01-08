@@ -9,9 +9,10 @@ import Dashboard from "./components/admin/Dashboard";
 import AdminMatches from "./components/admin/matches";
 import AddEditMatch from "./components/admin/matches/AddEditMatch";
 import AdminPlayers from "./components/admin/players";
-import AddEditPlayer from './components/admin/players/AddEditPlayer';
+import AddEditPlayer from "./components/admin/players/AddEditPlayer";
 
-import Team from './components/team';
+import Team from "./components/team";
+import Matches from "./components/matches";
 
 import PrivateRoute from "./components/auth_routes/PrivateRoutes";
 import PublicRoute from "./components/auth_routes/PublicRoutes";
@@ -27,6 +28,15 @@ const Routes = props => {
           path="/"
           component={Home}
         />
+
+        <PublicRoute
+          {...props}
+          exact
+          restricted={false}
+          path="/matches"
+          component={Matches}
+        />
+
         <PublicRoute
           {...props}
           exact
@@ -34,6 +44,7 @@ const Routes = props => {
           path="/team"
           component={Team}
         />
+
         <PublicRoute
           {...props}
           restricted={true}
@@ -41,12 +52,7 @@ const Routes = props => {
           path="/signin"
           component={SignIn}
         />
-        <PrivateRoute 
-          {...props} 
-          exact 
-          path="/admin" 
-          component={Dashboard} 
-        />
+        <PrivateRoute {...props} exact path="/admin" component={Dashboard} />
         <PrivateRoute
           {...props}
           exact

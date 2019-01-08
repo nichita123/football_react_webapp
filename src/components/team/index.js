@@ -9,7 +9,7 @@ import { Promise } from "core-js";
 
 class Team extends Component {
   state = {
-    loading: true,
+    isLoading: true,
     players: []
   };
 
@@ -36,7 +36,7 @@ class Team extends Component {
 
       Promise.all(promises).then(() => {
         this.setState({
-          loading: false,
+          isLoading: false,
           players
         });
       });
@@ -69,7 +69,7 @@ class Team extends Component {
           background: `url(${Stripes}) repeat`
         }}
       >
-        {!this.state.loading ? (
+        {!this.state.isLoading ? (
           <div>
             <div className="team_category_wrapper">
               <div className="title">Keepers</div>
