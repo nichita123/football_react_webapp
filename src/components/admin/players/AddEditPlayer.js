@@ -5,10 +5,8 @@ import FormField from "../../ui/formFields";
 import { validate } from "../../ui/misc";
 
 import { firebase, firebaseDB, firebasePlayers } from "../../../firebase";
-import { firebaseLooper } from "../../ui/misc";
 
 import Fileuploader from "../../ui/Fileuploader";
-import { storage } from "firebase";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 

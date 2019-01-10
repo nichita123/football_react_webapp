@@ -11,6 +11,8 @@ import AddEditMatch from "./components/admin/matches/AddEditMatch";
 import AdminPlayers from "./components/admin/players";
 import AddEditPlayer from "./components/admin/players/AddEditPlayer";
 
+import NotFound404 from './components/ui/notFound404';
+
 import Team from "./components/team";
 import Matches from "./components/matches";
 
@@ -92,6 +94,12 @@ const Routes = props => {
           path="/admin/players/edit/:id"
           component={AddEditPlayer}
           //edit player component
+        />
+
+        <PublicRoute
+          {...props}
+          restricted={false}
+          component={NotFound404}
         />
       </Switch>
     </Layout>

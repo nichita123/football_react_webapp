@@ -18,7 +18,7 @@ const MatchesHome = () => {
 
         <Tag 
           link={true}
-          linkTo="team"
+          linkTo="matches"
           bck="#ffffff"
           size="22px"
           color="#0e1731"

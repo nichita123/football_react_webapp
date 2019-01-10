@@ -584,7 +584,7 @@ footer .footer_discl {
 .admin_container  .admin_right {
     flex-grow: 1;
 }
-.admin_container  .admin_progress {
+.admin_progress {
     text-align: center;
     margin: 20px 0px;
 }
